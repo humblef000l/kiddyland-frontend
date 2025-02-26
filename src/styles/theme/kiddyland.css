@@ -1,0 +1,44 @@
+[data-theme="kiddyland"]{
+    /* Colors */
+    --primary: #ffdb00;
+    --secondary: #eae3da;
+    --error: #e30613;
+    --warning: #ef9617;
+    --info: #0058a3;
+    --success: #00a366;
+
+    /* Text Colors */
+    --text-primary: #474747;
+    --text-secondary: #767571;
+    --text-disabled: #767571;
+
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+
+    /* Font Sizes */
+    /* Headings */
+    --font-h1: 32px;
+    --font-h2: 28px;
+    --font-h3: 24px;
+    --font-h4: 20px;
+
+    /* Other Text Elements */
+    --font-subtitle: 18px;
+    --font-base: 16px;
+    --font-sm: 14px;
+    --font-xs: 12px;
+
+    /* Font weight */
+    --font-light: 300;
+    --font-regular: 400;
+    --font-bold: 700;
+}
