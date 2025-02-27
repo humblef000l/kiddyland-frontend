@@ -5,8 +5,7 @@ export interface MallSlice {
   setMall: (mall: string) => void;
 }
 
-export const createMallSlice: StateCreator<MallSlice> = (set) => ({
-    mall:null,
-    setMall: (mall: string) => set({ mall }),
-})
-
+export const createMallSlice: StateCreator<MallSlice> = (set, get) => ({
+  mall: null,
+  setMall: (mall) => set({ mall }),
+});

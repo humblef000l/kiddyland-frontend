@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react'
 import Button from './Button';
 
 const ThemeSwitcher = () => {
-    const [theme, setTheme] = useState<string>("dracula");
+    const [theme, setTheme] = useState<string>("kiddyland");
 
     useEffect(() => {
-      const storedTheme = localStorage.getItem("theme") || "dracula";
+      const storedTheme = localStorage.getItem("theme") || "kiddyland";
       document.documentElement.setAttribute("data-theme", storedTheme);
       setTheme(storedTheme);
     }, []);
@@ -18,7 +18,7 @@ const ThemeSwitcher = () => {
       setTheme(newTheme);
     };
   
-    return <Button variant='error' disabled onClick={toggleTheme}>{theme === "dracula" ? "Switch to Vintage" : "Switch to Dracula"}</Button>;
+    return <Button variant='primary' onClick={toggleTheme}>{theme === "kiddyland" ? "Switch to GBE" : "Switch to Kiddyland"}</Button>;
 }
 
 export default ThemeSwitcher
