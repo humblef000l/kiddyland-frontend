@@ -16,20 +16,26 @@ export default {
     },
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
         primary: "var(--primary)",
         secondary: "var(--secondary)",
-        accent: "var(--accent)",
+        error: "var(--error)",
+        warning: "var(--warning)",
+        info: "var(--info)",
+        success: "var(--success)",
+        text: {
+          primary: "var(--text-primary)",
+          secondary: "var(--text-secondary)",
+          disabled: "var(--text-disabled)",
+        },
       },
-      spacing:{
+      spacing: {
         xs: "var(--spacing-xs)",
         sm: "var(--spacing-sm)",
         md: "var(--spacing-md)",
         lg: "var(--spacing-lg)",
         xl: "var(--spacing-xl)",
       },
-      borderRadius:{
+      borderRadius: {
         sm: "var(--radius-sm)",
         md: "var(--radius-md)",
         lg: "var(--radius-lg)",
@@ -44,7 +50,7 @@ export default {
         sm: "var(--font-sm)", // 14px
         xs: "var(--font-xs)", // 12px
       },
-      fontWeight:{
+      fontWeight: {
         light: "var(--font-light)",
         regular: "var(--font-regular)",
         bold: "var(--font-bold)",

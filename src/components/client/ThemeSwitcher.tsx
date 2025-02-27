@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
+import Button from './Button';
 
 const ThemeSwitcher = () => {
     const [theme, setTheme] = useState<string>("dracula");
@@ -17,7 +18,7 @@ const ThemeSwitcher = () => {
       setTheme(newTheme);
     };
   
-    return <button className={"bg-primary p-xs text-base rounded-sm"} onClick={toggleTheme}>{theme === "dracula" ? "Switch to Vintage" : "Switch to Dracula"}</button>;
+    return <Button variant='error' disabled onClick={toggleTheme}>{theme === "dracula" ? "Switch to Vintage" : "Switch to Dracula"}</Button>;
 }
 
 export default ThemeSwitcher

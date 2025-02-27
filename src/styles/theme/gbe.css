@@ -1,9 +1,16 @@
 [data-theme="gbe"] {
-  --background: #f4e2d8;
-  --foreground: #3e2723;
-  --primary: #c08457;
-  --secondary: #a67c52;
-  --accent: #d4a373;
+  /* Colors */
+  --primary: #e6c200;
+  --secondary: #b8b2a6;
+  --error: #ff4c4c;
+  --warning: #ffae42;
+  --info: #4da8da;
+  --success: #2ba84a;
+
+  /* Text Colors */
+  --text-primary: #eaeaea;
+  --text-secondary: #b5b5b5;
+  --text-disabled: #757575;
 
   /* Spacing */
   --spacing-xs: 4px;
