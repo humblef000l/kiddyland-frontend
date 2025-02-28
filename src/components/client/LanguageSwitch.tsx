@@ -1,7 +1,7 @@
 "use client"
-import { usePathname, useRouter } from '@/i18n/navigation';
-import { locales } from '@/i18n/routing';
+import { locales, TLocale } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
+import { usePathname, useRouter } from 'next/navigation';
 import React from 'react'
 
 const LanguageSwitch = () => {
@@ -10,18 +10,28 @@ const LanguageSwitch = () => {
     const currentLocale = useLocale();
 
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        const newLocale = event.target.value;;
-        router.replace(pathname, { locale: newLocale });
-    }
-  return (
-    <select onChange={handleChange} defaultValue={currentLocale}>
-        {
-            locales.map(locale => (
-                <option key={locale} value={locale}>{locale.toUpperCase()}</option>
-            ))
-        }
-    </select>
-  )
+        const newLocale = event.target.value;
+
+        // Remove existing locale from the pathname before adding a new one
+        const normalizedPath = pathname
+            .split("/")
+            .filter((segment) => !locales.includes(segment as TLocale)) // Remove old locale
+            .join("/");
+        
+            console.log("normalizedPath", normalizedPath);
+        // Navigate to new locale path
+        router.replace(`/${newLocale}${normalizedPath ? `/${normalizedPath}` : ""}`);
+    };
+
+    return (
+        <select onChange={handleChange} defaultValue={currentLocale}>
+            {
+                locales.map(locale => (
+                    <option key={locale} value={locale}>{locale.toUpperCase()}</option>
+                ))
+            }
+        </select>
+    )
 }
 
 export default LanguageSwitch

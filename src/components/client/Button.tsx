@@ -20,19 +20,18 @@ const Button: React.FC<ButtonProps> = ({
     return (
         <button
             className={clsx(
-                "rounded-md",
+                "rounded-[50]",
                 "px-4",
                 "py-2",
-                "font-semibold",
                 "focus:outline-none",
                 "duration-200",
                 "ease-in-out",
                 {
                     // variants
-                    "bg-primary text-white": variant === "primary",
-                    "bg-secondary text-white": variant === "secondary",
+                    "bg-primary text-text-primary": variant === "primary",
+                    "bg-secondary text-text-secondary": variant === "secondary",
                     "bg-white text-primary border border-primary": variant === "outline",
-                    "bg-error text-white": variant === "error",
+                    "bg-error text-text-error": variant === "error",
 
                     // sizes
                     "px-3 py-1 text-sm": size === "sm",

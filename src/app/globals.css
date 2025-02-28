@@ -1,5 +1,5 @@
-@import "../../styles/theme/gbe.css";
-@import "../../styles/theme/kiddyland.css";
+@import "../styles/theme/gbe.css";
+@import "../styles/theme/kiddyland.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,7 +17,7 @@
 } */
 @font-face {
   font-family: 'Noto IKEA Latin';
-  src: url("../../assets//fonts/NotoIKEALatin-Regular.ttf") format("ttf");
+  src: url("../assets//fonts/NotoIKEALatin-Regular.ttf") format("ttf");
   font-weight: normal;
 }
 body {
