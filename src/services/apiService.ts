@@ -233,7 +233,6 @@ const retryRequest = async (path: string, options: TRequestOptions, retries: num
 
 const makeRequest = async (path: string, options: TRequestOptions = {}, useRetry = true) => {
     // creating controller when not provided
-    debugger
     const controller = new AbortController();
 
     if (options.abortSignal) {
