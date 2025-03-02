@@ -36,6 +36,7 @@ const Input: React.FC<InputProps> = ({
           'px-3 py-1 text-sm': inputSize === 'sm',
           'px-4 py-2 text-base': inputSize === 'md',
           'px-5 py-3 text-lg': inputSize === 'lg',
+          'px-5 py-3 text-xl': inputSize === 'xl',
 
           // Full width
           'w-full': fullWidth,

@@ -250,7 +250,6 @@ const makeRequest = async (path: string, options: TRequestOptions = {}, useRetry
     };
 
     // Only stringify if body is an object and not already a string or FormData
-    debugger
     const body = options.body ?
         (typeof options.body === 'object' && !(options.body instanceof FormData) ?
             JSON.stringify(camelToSnakeKeys(options.body)) :
