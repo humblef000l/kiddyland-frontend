@@ -1,3 +1,4 @@
+import { camelToSnakeKeys, snakeToCamelKeys } from "@/helpers/caseHelper";
 import { TApiError, TRequestOptions } from "@/types/apiTypes";
 
 const retriableStatusCode = [408, 429, 502, 503, 504];
@@ -104,7 +105,7 @@ const createApiError = (status: number, message: string, data?: any): TApiError 
  * const data = await handleResponse(response, transform);
  * console.log(data); // Output: { name: "John", transformed: true }
  */
-const handleResponse = async (response: Response, transformResponse?: (data: any) => any) => {
+const handleResponse = async (response: Response, transformResponse: (data: any) => any=snakeToCamelKeys) => {
     const contentType = response.headers.get('content-type');
     if (!response.ok) {
         let errorData: any = {};
@@ -135,7 +136,7 @@ const handleResponse = async (response: Response, transformResponse?: (data: any
         data = await response.text();
     } else if (contentType?.includes('application/octet-stream')) {
         // for media file-> font,image,audio,video etc
-        data = await response.blob();
+        return await response.blob();
     } else {
         //default to json if content-type is not specified
         try {
@@ -145,7 +146,7 @@ const handleResponse = async (response: Response, transformResponse?: (data: any
         }
     }
 
-    return transformResponse ? transformResponse(data) : data
+    return transformResponse ? transformResponse(data) : data;
 }
 
 /**
@@ -249,9 +250,10 @@ const makeRequest = async (path: string, options: TRequestOptions = {}, useRetry
     };
 
     // Only stringify if body is an object and not already a string or FormData
+    debugger
     const body = options.body ?
         (typeof options.body === 'object' && !(options.body instanceof FormData) ?
-            JSON.stringify(options.body) :
+            JSON.stringify(camelToSnakeKeys(options.body)) :
             options.body) :
         undefined;
 
